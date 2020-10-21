@@ -194,8 +194,8 @@ class Verb(object):
     def print_one_verb_congugations(self):
         for p in (Vt.PLAIN, Vt.POLITE):
             for t in (Vt.PRESENT, Vt.PAST):
-                for l in (Vt.AFFIRM, Vt.NEG):
-                    print(p, t, l, self.conjugate(p, t, l))
+                for pn in (Vt.AFFIRM, Vt.NEG):
+                    print(p, t, pn, self.conjugate(p, t, pn))
         print(Vt.TE, self.conjugate(Vt.TE))
         print(Vt.VOLITIONAL, Vt.PLAIN, self.conjugate(Vt.VOLITIONAL, Vt.PLAIN))
         print(Vt.VOLITIONAL, Vt.POLITE, self.conjugate(Vt.VOLITIONAL, Vt.POLITE))
@@ -223,8 +223,8 @@ class UFormat(object):
     def format_uwords(words, width):
         """ Format given list of words in 'width' per column, taking care of non-ascii
         character widths.
-        >>> words = ['eat', 'たべる', 'たべない']
-        >>> UFormat.format_uwords(words, 10)
+        >>> words_ = ['eat', 'たべる', 'たべない']
+        >>> UFormat.format_uwords(words_, 10)
         'eat       たべる     たべない   '
         """
 
@@ -457,9 +457,9 @@ def print_verb_conjugation_table():
 
     for v in sdict.eng_verb_dict.values():
         conjugations = [
-            v.conjugate(t, l)
+            v.conjugate(t, pn)
             for t in (Vt.PRESENT, Vt.PAST)
-            for l in (Vt.AFFIRM, Vt.NEG)]
+            for pn in (Vt.AFFIRM, Vt.NEG)]
         print(UFormat.format_uwords((v.meaning, v.masu, v.te, *conjugations), width))
 
 
@@ -467,6 +467,6 @@ if __name__ == '__main__':
     # v = Verb(u'かく', 'to write')
     # v.print_one_verb_congugations()
     import doctest
-    doctest.testmod(verbose=0)
+    doctest.testmod(verbose=False)
 
     print_verb_conjugation_table()

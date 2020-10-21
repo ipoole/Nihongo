@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import unittest
-from japanese import Verb, Noun, Vt, hiragana, left_kana, left_most_kana, \
+from japanese import Verb, Vt, hiragana, left_kana, left_most_kana, \
     print_verb_conjugation_table, Dictionary
 
 
