@@ -1,8 +1,7 @@
 # coding: utf-8
 
 import unittest
-from japanese import Verb, Vt, hiragana, left_kana, left_most_kana, \
-    print_verb_conjugation_table, Dictionary
+from japanese import Verb, Noun, Vt, hiragana, left_kana, left_most_kana
 
 
 class TestJapanese(unittest.TestCase):
@@ -153,35 +152,10 @@ class TestJapanese(unittest.TestCase):
         assert v.conjugate(Vt.VOLITIONAL) == 'ならおう'
         assert v.conjugate(Vt.VOLITIONAL, Vt.POLITE) == 'ならいましょう'
 
-    def test_print_verb_conjugation_table(self):
-        print_verb_conjugation_table()
-
-    def test_dictionary(self):
-        jdict = Dictionary()
-
-        # nouns
-        n = jdict.noun('apple')
-        assert n.jap == 'りんご'
-        assert n.meaning == 'apple'
-
-        n = jdict.noun('ねこ')
-        assert n.jap == 'ねこ'
-        assert n.meaning == 'cat'
-
-        assert jdict.noun('ねこ') is jdict.noun('cat')
-        assert jdict.noun('cat') is not jdict.noun('dog')
-
-        # verbs
-        v = jdict.verb('eat')
-        assert v.plain == 'たべる'
-        assert v.meaning == 'eat'
-
-        v = jdict.verb('のむ')
-        assert v.plain == 'のむ'
-        assert v.meaning == 'drink'
-
-        assert jdict.verb('do') is jdict.verb('する')
-        assert jdict.verb('eat') is not jdict.verb('drink')
+    def test_noun(self):
+        n = Noun('まど', 'window')
+        assert n.eng == n.meaning == 'window'
+        assert n.jap == 'まど'
 
 
 if __name__ == '__main__':

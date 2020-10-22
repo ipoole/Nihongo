@@ -1,7 +1,8 @@
 # coding: utf-8
 
 from time import sleep
-from japanese import Vt, sdict
+from japanese import Vt
+from dictionary import sdict
 from say import say, finish_speaking, speech_available
 
 
