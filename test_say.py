@@ -6,7 +6,7 @@ import say
 class TestSay(unittest.TestCase):
     def test_say(self):
         say.say("Hello in English")
-        say.say("きにちは", 'ja-JP')
+        say.say("こんにちは", 'ja-JP')
 
     def test_is_speaking(self):
         say.say("I'm speaking")

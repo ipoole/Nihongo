@@ -14,15 +14,12 @@ except ModuleNotFoundError:
 
     # noinspection PyUnusedLocal
     def say(text, lang='en-GB', speed=0.5):
-        # print("Say:", text[:7], "...")
+        # print("Saying:", text[:7], "...")
         assert lang in ['en-GB', 'ja-JP']    # There are many others but these are only ones we use
         assert 0.05 <= speed <= 1
 
     def is_speaking():
         return False
-
-
-# Here is a comment I added
 
 
 def finish_speaking():
@@ -42,7 +39,7 @@ def say_jap_wait(jap, t=0):
 def say_eng_wait(eng, t=0):
     say(eng, 'en-GB')
     while is_speaking():
-        sleep(t)
+        sleep(0.1)
     if speech_available:
         sleep(t)
 

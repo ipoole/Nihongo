@@ -1,9 +1,8 @@
 # coding: utf-8
 
 from time import sleep
-import random
 from japanese import Vt, sdict
-from say import say, say_jap_wait, say_eng_wait, finish_speaking, speech_available
+from say import say, finish_speaking, speech_available
 
 
 def print_and_say(jap_eng):
@@ -68,20 +67,6 @@ def polite_request_sen_examples():
     print_and_say(polite_request_sen('wait'))
 
 
-def say_numbers():
-    for i in range(1, 11):
-        logn = random.uniform(1.8, 4.5)
-        n = int(10 ** logn)
-        say_jap_wait(f'{str(i)} ばん', 2)
-        for _ in range(2):
-            say_jap_wait(str(n), 5)
-
-        say_eng_wait(f'That was {str(n)}.', 1)
-        print(i, ':', n)
-        say_jap_wait(str(n), 3)
-    say_jap_wait('おわりました')
-
-
 if __name__ == '__main__':
     import doctest
 
@@ -91,4 +76,3 @@ if __name__ == '__main__':
     print()
     polite_request_sen_examples()
 
-    say_numbers()
