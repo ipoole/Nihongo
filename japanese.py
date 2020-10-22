@@ -58,6 +58,7 @@ def right_most_kana(c):
     return line[-1]
 
 
+# noinspection SpellCheckingInspection
 class Vt(Enum):
     REGULAR = 1,  # JFBP Regular 2, e.g. あべる
     VARIABLE = 2,  # JFBP Regular 1, e.g. のむ、いく
