@@ -29,7 +29,7 @@ def finish_speaking():
 
 
 def say_jap_wait(jap, t=0):
-    say(jap, 'ja-JP', 0.4)
+    say(jap, 'ja-JP', 0.3)
     while is_speaking():
         sleep(0.1)
     if speech_available:

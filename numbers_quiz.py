@@ -19,7 +19,7 @@ def numbers_quiz(num_questions=10, repeats=2, delay=4):
 def times_quiz(num_questions=10, repeats=2, delay=4):
     for i in range(1, num_questions + 1):
         hrs = random.randint(0, 12)
-        mins = random.choice([5, 15, 15, 30, 30, 30, 45, 45, 55, 40, 20, 10])
+        mins = random.choice(['05', 15, 15, 30, 30, 30, 45, 45, 55, 40, 20, 10])
         am_or_pm = random.choice(['am', 'pm'])
         say_jap_wait(f'{str(i)} ばん', 1)
         time_eng = f"{hrs}:{mins} {am_or_pm}"
@@ -34,4 +34,4 @@ def times_quiz(num_questions=10, repeats=2, delay=4):
 if __name__ == "__main__":
     numbers_quiz(num_questions=5, repeats=2, delay=4)
     say_jap_wait('なんじですか', 2)
-    times_quiz(num_questions=5, repeats=2, delay=4)
+    times_quiz(num_questions=5, repeats=2, delay=5)
